@@ -5,8 +5,7 @@
 
 .bracket {
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    flex-direction: column;
     gap: 40px;
     min-width: fit-content;
 }
@@ -16,12 +15,28 @@
     flex-direction: column;
     justify-content: space-around;
     min-height: 400px;
+    width: 100%;
 }
 
+/* Style untuk tampilan semua babak */
 .round h3 {
     text-align: center;
     margin-bottom: 20px;
     color: #4a5568;
+    font-size: 24px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.round h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 2px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
 }
 
 .match {
@@ -34,60 +49,16 @@
     min-width: 200px;
 }
 
-.match:hover {
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.participant {
-    padding: 15px;
-    border-bottom: 1px solid #e2e8f0;
-    cursor: pointer;
-    transition: all 0.3s;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.participant:last-child {
-    border-bottom: none;
-}
-
-.participant:hover {
-    background: #edf2f7;
-}
-
-.participant.winner {
-    background: #c6f6d5;
-    font-weight: bold;
-}
-
-.participant.selected {
-    background: #bee3f8;
-}
-
-.participant-name {
-    flex-grow: 1;
-}
-
-.participant-score {
-    font-weight: bold;
-    margin-left: 10px;
-}
-
-.match.completed {
-    border-color: #48bb78;
-}
-
 .empty-slot {
     color: #a0aec0;
     font-style: italic;
+    text-align: center;
+    padding: 15px;
 }
 
-.match-number {
-    background: #667eea;
-    color: white;
-    padding: 5px;
-    text-align: center;
-    font-size: 12px;
-    font-weight: bold;
+/* Tambahkan style untuk tampilan vertikal babak */
+.rounds-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
