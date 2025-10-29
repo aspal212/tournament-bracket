@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tournament Bracket Generator</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏆 Tournament Bracket Generator</h1>
+            <p>Buat bracket turnamen sistem gugur</p>
+        </header>
+
+        <main>
+            <div class="tournament-setup">
+                <h2>Setup Tournament</h2>
+                
+                <div class="form-group">
+                    <label for="tournamentName">Nama Tournament:</label>
+                    <input type="text" id="tournamentName" placeholder="Contoh: Badminton Championship 2024">
+                </div>
+
+                <div class="form-group">
+                    <label for="playerCount">Jumlah Peserta:</label>
+                    <select id="playerCount">
+                        <option value="4">4 Peserta</option>
+                        <option value="8">8 Peserta</option>
+                        <option value="16">16 Peserta</option>
+                        <option value="32">32 Peserta</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Daftar Peserta:</label>
+                    <div id="playerInputs"></div>
+                    <button type="button" id="generateInputs" class="btn btn-secondary">Generate Input Peserta</button>
+                </div>
+
+                <div class="form-actions">
+                    <button id="createBracket" class="btn btn-primary" disabled>Buat Bracket</button>
+                    <button id="loadExample" class="btn btn-outline">Load Contoh</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/bracket.js"></script>
+</body>
+</html>
