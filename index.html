@@ -3,48 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manajemen Turnamen Gugur</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Tournament Bracket Manager</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/bracket.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
     <div class="container">
-        <h1>Manajemen Turnamen Gugur</h1>
-        
-        <div class="form-section">
-            <h2>Informasi Turnamen</h2>
-            <form id="tournamentForm">
+        <!-- Setup Tournament -->
+        <section id="setup-section" class="section active">
+            <h1>Tournament Bracket Manager</h1>
+            <div class="setup-form">
                 <div class="form-group">
-                    <label for="tournamentName">Nama Turnamen:</label>
-                    <input type="text" id="tournamentName" required placeholder="Contoh: Turnamen Sepak Bola 2025">
+                    <label for="tournament-name">Nama Turnamen:</label>
+                    <input type="text" id="tournament-name" placeholder="Masukkan nama turnamen">
                 </div>
                 
                 <div class="form-group">
-                    <label for="numParticipants">Jumlah Peserta:</label>
-                    <input type="number" id="numParticipants" min="2" required placeholder="Harus berupa bilangan berpangkat 2">
+                    <label for="participant-count">Jumlah Peserta:</label>
+                    <select id="participant-count">
+                        <option value="4">4 Peserta</option>
+                        <option value="8">8 Peserta</option>
+                        <option value="16">16 Peserta</option>
+                        <option value="32">32 Peserta</option>
+                    </select>
                 </div>
                 
                 <div class="form-group">
-                    <label for="participantsList">Daftar Peserta (per baris satu nama):</label>
-                    <textarea id="participantsList" rows="10" required placeholder="Masukkan nama peserta satu per baris (contoh: Tim A, Tim B, dll)"></textarea>
+                    <label>Input Peserta:</label>
+                    <div id="participants-input" class="participants-grid">
+                        <!-- Input peserta akan digenerate di sini -->
+                    </div>
                 </div>
                 
-                <button type="button" id="generateButton" class="btn-primary">Generate Bracket</button>
-            </form>
-        </div>
-        
-        <div class="bracket-container" id="bracketContainer">
-            <h2>Braket Turnamen</h2>
-            <div id="bracketDisplay" class="bracket">
-                <!-- Braket akan ditampilkan di sini -->
+                <button id="generate-bracket" class="btn btn-primary">Generate Bracket</button>
+            </div>
+        </section>
+
+        <!-- Tournament Bracket -->
+        <section id="tournament-section" class="section">
+            <div class="tournament-header">
+                <h2 id="tournament-title"></h2>
+                <div class="tournament-controls">
+                    <button id="reset-tournament" class="btn btn-secondary">Reset Tournament</button>
+                    <button id="export-results" class="btn btn-success">Export Results</button>
+                </div>
             </div>
             
-            <div class="round-controls">
-                <button id="nextRoundButton" class="btn-secondary" disabled>Next Round</button>
-                <button id="resetButton" class="btn-secondary">Reset</button>
+            <div class="bracket-navigation">
+                <button id="prev-round" class="btn btn-nav">← Round Sebelumnya</button>
+                <span id="current-round-display">Round 1</span>
+                <button id="next-round" class="btn btn-nav">Round Selanjutnya →</button>
             </div>
-        </div>
+            
+            <div id="bracket-container" class="bracket-container">
+                <!-- Bracket akan digenerate di sini -->
+            </div>
+            
+            <div id="winner-section" class="winner-section hidden">
+                <h3>🏆 Pemenang Tournament: <span id="winner-name"></span></h3>
+            </div>
+        </section>
     </div>
-    
-    <script src="script.js"></script>
+
+    <script src="js/storage.js"></script>
+    <script src="js/tournament.js"></script>
+    <script src="js/bracket.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>
