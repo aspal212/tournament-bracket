@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manajemen Turnamen Gugur</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Manajemen Turnamen Gugur</h1>
+        
+        <div class="form-section">
+            <h2>Informasi Turnamen</h2>
+            <form id="tournamentForm">
+                <div class="form-group">
+                    <label for="tournamentName">Nama Turnamen:</label>
+                    <input type="text" id="tournamentName" required placeholder="Contoh: Turnamen Sepak Bola 2025">
+                </div>
+                
+                <div class="form-group">
+                    <label for="numParticipants">Jumlah Peserta:</label>
+                    <input type="number" id="numParticipants" min="2" required placeholder="Harus berupa bilangan berpangkat 2">
+                </div>
+                
+                <div class="form-group">
+                    <label for="participantsList">Daftar Peserta (per baris satu nama):</label>
+                    <textarea id="participantsList" rows="10" required placeholder="Masukkan nama peserta satu per baris (contoh: Tim A, Tim B, dll)"></textarea>
+                </div>
+                
+                <button type="button" id="generateButton" class="btn-primary">Generate Bracket</button>
+            </form>
+        </div>
+        
+        <div class="bracket-container" id="bracketContainer">
+            <h2>Braket Turnamen</h2>
+            <div id="bracketDisplay" class="bracket">
+                <!-- Braket akan ditampilkan di sini -->
+            </div>
+            
+            <div class="round-controls">
+                <button id="nextRoundButton" class="btn-secondary" disabled>Next Round</button>
+                <button id="resetButton" class="btn-secondary">Reset</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
