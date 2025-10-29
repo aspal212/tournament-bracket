@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tournament Bracket</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 id="tournamentTitle">Tournament Bracket</h1>
+            <div class="header-actions">
+                <button id="resetTournament" class="btn btn-outline">Reset Tournament</button>
+                <button id="backToSetup" class="btn btn-secondary">Kembali ke Setup</button>
+            </div>
+        </header>
+
+        <main>
+            <div id="bracketContainer" class="bracket-container">
+                <!-- Bracket akan di-generate di sini -->
+            </div>
+
+            <div id="winnerSection" class="winner-section" style="display: none;">
+                <h2>🏆 JUARA TOURNAMENT 🏆</h2>
+                <div id="winnerName" class="winner-name"></div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/bracket.js"></script>
+</body>
+</html>
